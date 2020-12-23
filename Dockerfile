@@ -1,9 +1,9 @@
 FROM caddy:builder AS builder
 
-RUN caddy-build \
-    github.com/caddy-dns/cloudflare \
-    github.com/greenpau/caddy-auth-portal \
-    github.com/porech/caddy-maxmind-geolocation
+RUN xcaddy build \
+    --with github.com/caddy-dns/cloudflare \
+    --with github.com/greenpau/caddy-auth-portal \
+    --with github.com/porech/caddy-maxmind-geolocation
 
 FROM caddy:latest
 
